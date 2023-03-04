@@ -9,6 +9,7 @@ public class EnemyStats
     public float health;
     public float movementSpeed;
     public float detectionRadius;
+    public float idleSlowMult = 0.4f;
 
     public EnemyStats(EnemyStats stats)
     {

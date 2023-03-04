@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class MeleeEnemy : Enemy
 {
-    // Start is called before the first frame update
+    bool isAtacking = false;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         

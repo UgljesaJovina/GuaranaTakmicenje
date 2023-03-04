@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour, IDamagable
@@ -13,19 +14,29 @@ public abstract class Enemy : MonoBehaviour, IDamagable
     public int enemyScore = 0;
     public int enemyMoney = 0;
 
-    private void OnDrawGizmos()
+    void Awake()
     {
-        Gizmos.DrawSphere(transform.position, stats.detectionRadius);
+        deathEvent += Death;
     }
 
-    protected void CallDeathEvent()
+    private void OnDrawGizmos()
     {
-        deathEvent(this);
+        if (Selection.activeGameObject != gameObject)
+            return;
+
+        Gizmos.DrawWireSphere(transform.position, stats.detectionRadius);
     }
 
     public void TakeDamage(float damage)
     {
-        stats.damage -= damage;
+        stats.health -= damage;
+        if (stats.health <= 0)
+            deathEvent(this);
+    }
+
+    public void Death(Enemy sender)
+    {
+        Destroy(gameObject);
     }
 
     public delegate void DeathDelegate(Enemy sender);

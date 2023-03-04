@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) return;
+        if (collision.isTrigger) return;
 
         if (collision.TryGetComponent(out IDamagable damagable)) 
             damagable.TakeDamage(damage);

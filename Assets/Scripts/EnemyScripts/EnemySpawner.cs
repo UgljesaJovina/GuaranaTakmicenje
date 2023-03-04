@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
     [System.Serializable]
-    struct Wave
+    class Wave
     {
         public WaveEnemy[] enemies;
     }
 
     [System.Serializable]
-    struct WaveEnemy
+    class WaveEnemy
     {
         public Enemy enemyType;
         public int spawnCount;
@@ -35,8 +36,8 @@ public class EnemySpawner : MonoBehaviour
     List<Enemy> spawnedEnemies;
     int currentWave = 0;
     [SerializeField] float timeBetweenWaves = 30f, currentTimeBetweenWaves = 30;
-    int timeBetweenSpawnsMilis = 250;
-    bool waveSpawned = false, waveKilled = false;
+    int timeBetweenSpawns = 250;
+    bool waveSpawned = false, waveKilled = true;
 
     void Update()
     {
@@ -71,7 +72,7 @@ public class EnemySpawner : MonoBehaviour
 
             e.deathEvent += EnemyDeath;
 
-            await Task.Delay(timeBetweenSpawnsMilis);
+            await Task.Delay(timeBetweenSpawns);
         }
 
         waveSpawned = true;
@@ -84,7 +85,7 @@ public class EnemySpawner : MonoBehaviour
         // not spawned enemies
         var enemyGroups = waves[currentWave].enemies.Where(wave => wave.spawnCount > 0).ToArray();
 
-        if (enemyGroups.Length == 0)
+        if (enemyGroups.All(i => i.spawnCount == 0))
         {
             waveSpawned = true;
             return null;
@@ -99,11 +100,23 @@ public class EnemySpawner : MonoBehaviour
 
     void EnemyDeath(Enemy caller)
     {
+        PlayerScore.money += caller.enemyMoney;
+        PlayerScore.score += caller.enemyScore;
+
         spawnedEnemies.Remove(caller);
         if (spawnedEnemies.Count == 0 && waveSpawned)
         {
             waveKilled = true;
             currentTimeBetweenWaves = timeBetweenWaves;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (Selection.activeGameObject != gameObject)
+            return;
+
+        foreach (var i in positions)
+            Gizmos.DrawWireSphere(i, 1);
     }
 }
