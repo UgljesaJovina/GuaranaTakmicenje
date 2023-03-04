@@ -26,6 +26,6 @@ public class EnemyMovement : MonoBehaviour
     }
     void SetEnemyPosition()
     {
-        enemy.SetDestination(new Vector3(target.x,target.y));
+        enemy.SetDestination(target);
     }
 }
