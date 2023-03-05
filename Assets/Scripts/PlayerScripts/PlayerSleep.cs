@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerSleep : MonoBehaviour
+public class PlayerSleep : MonoBehaviour, IFriendlyDamagable
 {
     [SerializeField] Slider sleepDisplay;
     [SerializeField] float maxHealth, delta;

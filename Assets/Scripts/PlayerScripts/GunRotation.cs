@@ -15,8 +15,6 @@ public class GunRotation : MonoBehaviour
 
     void Update()
     {
-        weaponRenderer.enabled = true;
-
         mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         mousePosition.Normalize();
 
