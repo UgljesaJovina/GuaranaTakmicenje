@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Authority-Distressed SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -799139375
   material: {fileID: 2443581298450485955}
-  materialHashCode: 0
+  materialHashCode: 364030289
   m_Version: 1.1.0
   m_SourceFontFileGUID: 3b1183be191317c41902e79a0ff21e10
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 3b1183be191317c41902e79a0ff21e10, type: 3}
@@ -29,8 +29,8 @@ MonoBehaviour:
     m_UnitsPerEM: 1000
     m_LineHeight: 97.2
     m_AscentLine: 81
-    m_CapLine: 0
-    m_MeanLine: 0
+    m_CapLine: 58.15625
+    m_MeanLine: 58.15625
     m_Baseline: 0
     m_DescentLine: -16.199999
     m_SuperscriptOffset: 81
@@ -39,7 +39,7 @@ MonoBehaviour:
     m_SubscriptSize: 0.5
     m_UnderlineOffset: -8.099999
     m_UnderlineThickness: 4.0499997
-    m_StrikethroughOffset: 0
+    m_StrikethroughOffset: 23.2625
     m_StrikethroughThickness: 4.0499997
     m_TabWidth: 0
   m_GlyphTable:
@@ -2488,9 +2488,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0

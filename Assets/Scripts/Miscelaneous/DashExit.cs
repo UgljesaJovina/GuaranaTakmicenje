@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class DashExit : MonoBehaviour
 {
-    Coroutine killBoss;
     public SpriteRenderer whitescreen;
+    public SpriteRenderer sword;
     public static int enemiesHit;
     public bool isBoss;
     private void OnTriggerEnter2D()
     {
         if(isBoss)
-            PlayerScore.score = 2000 + enemiesHit;
+            PlayerScore.score += 2000;
         StartCoroutine(KillBoss());
     }
 
@@ -23,9 +23,10 @@ public class DashExit : MonoBehaviour
         {
             color.a = i;
             whitescreen.color = color;
+            sword.color = color;
             yield return new WaitForSeconds(0.01f);
         }
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("EndScreen");
     }
 }

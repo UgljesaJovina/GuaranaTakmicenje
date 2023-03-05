@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float velocity = 10f;
     [SerializeField] float acceleration = 10f;
     [SerializeField] float drag = 5f;
+    [SerializeField] Animator animator;
 
     Rigidbody2D rb;
     float horizontalInput, verticalInput;
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        animator.SetBool("Running", movementDirection != Vector2.zero);
         SpeedControl();
     }
 
@@ -38,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     void SpeedControl()
     {
         Vector2 flatVel = new(rb.velocity.x, rb.velocity.y);
-        if (flatVel.magnitude > velocity)
+        if (flatVel.magnitude > (velocity / Time.timeScale))
         {
             Vector2 limitedVel = flatVel.normalized * velocity;
             rb.velocity = new Vector2(limitedVel.x, limitedVel.y);

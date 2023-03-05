@@ -17,11 +17,6 @@ public class PlayerSleep : MonoBehaviour, IFriendlyDamagable
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-            TakeDamage(50);
-        else if (Input.GetKeyDown(KeyCode.Q))
-            TakeDamage(-150);
-
         if (currentHealth < 0) currentHealth = 0;
         if (currentHealth > maxHealth) currentHealth = maxHealth;
 
