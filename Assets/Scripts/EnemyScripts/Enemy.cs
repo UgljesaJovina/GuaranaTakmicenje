@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 
 public abstract class Enemy : MonoBehaviour, IDamagable
 {
@@ -9,7 +10,11 @@ public abstract class Enemy : MonoBehaviour, IDamagable
 
     public EnemyStats stats;
 
-    public Transform grandOwl, player;
+    public Transform grandOwl;
+
+    [SerializeField] protected NavMeshAgent agent;
+
+    [SerializeField] protected Animator animator;
 
     public int enemyScore = 0;
     public int enemyMoney = 0;
@@ -17,6 +22,8 @@ public abstract class Enemy : MonoBehaviour, IDamagable
     void Awake()
     {
         deathEvent += Death;
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     private void OnDrawGizmos()

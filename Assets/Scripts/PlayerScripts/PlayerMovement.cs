@@ -13,8 +13,6 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput, verticalInput;
     Vector2 movementDirection;
 
-    public bool ableToMove = true;
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         if (movementDirection != Vector2.zero) rb.drag = 0;
         else rb.drag = drag;
 
-        if (ableToMove) rb.AddForce(acceleration * velocity * movementDirection.normalized, ForceMode2D.Force);
+        rb.AddForce(acceleration * velocity * movementDirection.normalized / Time.timeScale, ForceMode2D.Force);
     }
 
     void SpeedControl()

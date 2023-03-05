@@ -20,23 +20,22 @@ public class EnemySpawner : MonoBehaviour
         public int spawnCount;
     }
 
-    [SerializeField] EnemyStats baseStats;
-
     public static float statMultiplier = 0f;
 
     [Header("Spawn locations")]
     [SerializeField] Vector2[] positions;
 
     [Header("Chase targets")]
-    [SerializeField] Transform gradnOwl;
+    [SerializeField] Transform grandOwl;
     [SerializeField] Transform player;
 
     [Header("Wave logic")]
     [SerializeField] Wave[] waves;
-    List<Enemy> spawnedEnemies;
+    [SerializeField] List<Enemy> spawnedEnemies;
     int currentWave = 0;
     [SerializeField] float timeBetweenWaves = 30f, currentTimeBetweenWaves = 30;
-    int timeBetweenSpawns = 250;
+    int currTimeBetweenSpawns = 250;
+    [SerializeField] float maxTimeBetweenSpawns, minTimeBetweenSpawns;
     bool waveSpawned = false, waveKilled = true;
 
     void Update()
@@ -48,6 +47,7 @@ public class EnemySpawner : MonoBehaviour
 
     public async void SpawnWave()
     {
+        currTimeBetweenSpawns = (int)Mathf.Clamp(currTimeBetweenSpawns - 20, minTimeBetweenSpawns, maxTimeBetweenSpawns);
         spawnedEnemies = new List<Enemy>();
         waveSpawned = false;
         waveKilled = false;
@@ -63,16 +63,15 @@ public class EnemySpawner : MonoBehaviour
             // grabbing the reference to the acctual enemy GameObject and subscribing to its onDeath event
             Enemy e = Instantiate(retEnemy, positions[Random.Range(0, positions.Length)], Quaternion.identity);
 
-            e.stats = new EnemyStats(baseStats);
+            e.stats = new EnemyStats(e.stats);
             e.stats.MultiplyStats(statMultiplier);
-            e.player = player;
-            e.grandOwl = gradnOwl;
+            e.grandOwl = grandOwl;
 
             spawnedEnemies.Add(e);
 
             e.deathEvent += EnemyDeath;
 
-            await Task.Delay(timeBetweenSpawns);
+            await Task.Delay(currTimeBetweenSpawns);
         }
 
         waveSpawned = true;

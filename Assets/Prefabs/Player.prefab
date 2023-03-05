@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4768927359180782671}
   - component: {fileID: 4768927359180782669}
   - component: {fileID: 4768927359180782668}
-  m_Layer: 0
+  - component: {fileID: 1401426598035937272}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -48,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e23c64acb53ef4ba285265ad1fd2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 10
-  acceleration: 10
+  velocity: 8
+  acceleration: 8
   drag: 5
   ableToMove: 1
 --- !u!50 &4768927359180782669
@@ -99,6 +100,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1401426598035937272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768927359180782705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe433ec9fb676164498cb95fd64597df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sleepDisplay: {fileID: 0}
+  maxHealth: 100
+  delta: 0.1
 --- !u!1 &4768927359249285523
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +126,7 @@ GameObject:
   - component: {fileID: 4768927359249285520}
   - component: {fileID: 4768927359249285521}
   - component: {fileID: 4768927359249285614}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,9 +215,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 4768927360268135504}
   bulletPrefab: {fileID: -3628899703558161051, guid: 0a8f9d8984b563a4ebc91cab666bc030, type: 3}
-  bulletsPerSecond: 15
+  bulletsPerSecond: 10
   asMultiplier: 0
-  baseBulletDamage: 2
+  baseBulletDamage: 5
   dmgMultiplier: 0
 --- !u!1 &4768927360109775010
 GameObject:
@@ -213,7 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4768927360109775011}
   - component: {fileID: 4768927360109775008}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerGraphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4768927360268135504}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4768927360551321917}
   - component: {fileID: 4768927360551321914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyStats 
 {
     public float damage;
+    public float attackSpeed;
     public float health;
     public float movementSpeed;
     public float detectionRadius;
@@ -14,9 +15,11 @@ public class EnemyStats
     public EnemyStats(EnemyStats stats)
     {
         damage = stats.damage;
+        attackSpeed = stats.attackSpeed;
         health = stats.health;
         movementSpeed = stats.movementSpeed;
         detectionRadius = stats.detectionRadius;
+        idleSlowMult = stats.idleSlowMult;
     }
 
     public void MultiplyStats(float multiplier)
