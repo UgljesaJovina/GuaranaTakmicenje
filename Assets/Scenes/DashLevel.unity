@@ -10197,7 +10197,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whitescreen: {fileID: 552710894}
   sword: {fileID: 828060159}
-  isBoss: 0
   isBoss: 1
 --- !u!61 &2101638679
 BoxCollider2D:
