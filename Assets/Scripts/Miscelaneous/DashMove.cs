@@ -22,7 +22,7 @@ public class DashMove : MonoBehaviour
         {
             jump = true;
         }*/
-        rb.velocity = new Vector2(65, rb.velocity.y);
+        rb.velocity = new Vector2(50, rb.velocity.y);
         if (Input.GetKeyDown(KeyCode.W))
         {
             rb.AddForce(new Vector2(0, 50f), ForceMode2D.Impulse);
