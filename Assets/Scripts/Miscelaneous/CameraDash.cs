@@ -8,6 +8,6 @@ public class CameraDash : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = player.transform.position + new Vector3(0, 0, -10);
+        transform.position = player.transform.position + new Vector3(20, 0, -10);
     }
 }
