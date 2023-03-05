@@ -26,6 +26,6 @@ public class DashExit : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("EndScreen");
     }
 }
