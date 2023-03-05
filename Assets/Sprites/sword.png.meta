@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a206122c7c3c71e4dbd43b14ad459f22
+guid: 1f5396346957c384cbe2dea3ce7d4de6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 180
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,70 +115,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: mele_0
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 312
-        width: 167
-        height: 278
-      alignment: 9
-      pivot: {x: 0.08128549, y: 0.9786394}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b084b3cd81f412b4680a0d10450c2384
-      internalID: 1193480861
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mele_1
-      rect:
-        serializedVersion: 2
-        x: 329
-        y: 147
-        width: 321
-        height: 438
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7757ecc89f012a4cace3393bddff78d
-      internalID: -801712531
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mele_2
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 18
-        width: 154
-        height: 250
-      alignment: 9
-      pivot: {x: 0.07238958, y: 0.9480651}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4be2bf4fb8140a74d9887bc52b288957
-      internalID: -635276716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -189,10 +126,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      mele_0: 1193480861
-      mele_1: -801712531
-      mele_2: -635276716
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

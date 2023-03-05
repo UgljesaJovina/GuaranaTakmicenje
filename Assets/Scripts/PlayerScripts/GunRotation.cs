@@ -20,6 +20,11 @@ public class GunRotation : MonoBehaviour
 
         float zRot = Mathf.Atan2(mousePosition.y, mousePosition.x) * Mathf.Rad2Deg;
 
+        if (zRot > 90f || zRot <= -90f)
+            weaponRenderer.flipY = true;
+        else
+            weaponRenderer.flipY = false;
+
         transform.rotation = Quaternion.Euler(0, 0, zRot);
     }
 }
