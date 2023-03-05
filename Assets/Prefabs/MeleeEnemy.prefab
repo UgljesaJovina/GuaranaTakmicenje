@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2909601945894059432}
   m_Layer: 0
   m_Name: MeleeEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,15 +52,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     damage: 10
-    attackSpeed: 2
+    attackSpeed: 1
     health: 100
-    movementSpeed: 8.5
+    movementSpeed: 9
     detectionRadius: 9
     idleSlowMult: 0.4
   grandOwl: {fileID: 0}
   agent: {fileID: -2850416094663715920}
   animator: {fileID: 2909601945894059432}
-  enemyScore: 10
+  enemyScore: 1000
   enemyMoney: 10
   whatIsPlayer:
     serializedVersion: 2

@@ -8,12 +8,18 @@ public class DashExit : MonoBehaviour
     public SpriteRenderer whitescreen;
     public SpriteRenderer sword;
     public static int enemiesHit;
-    public bool isBoss;
+    [SerializeField] GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
     private void OnTriggerEnter2D()
     {
-        if(isBoss)
-            PlayerScore.score += 2000;
+        PlayerScore.score += 2000;
         StartCoroutine(KillBoss());
+        player.GetComponent<DashMove>().enabled = false;
+        player.transform.position = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
     }
 
     IEnumerator KillBoss()

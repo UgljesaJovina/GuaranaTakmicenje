@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4768927359180782671}
   - component: {fileID: 4768927359180782669}
   - component: {fileID: 4768927359180782668}
-  - component: {fileID: 1401426598035937272}
   - component: {fileID: 1207627597733977716}
   - component: {fileID: 1843936552144729720}
+  - component: {fileID: 6524318483553206197}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -103,21 +103,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6524318483553206197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4768927359180782705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe433ec9fb676164498cb95fd64597df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sleepDisplay: {fileID: 0}
-  maxHealth: 300
-  delta: 0.1
 --- !u!114 &1207627597733977716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,8 +115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e507b0e20e7f8714ca311776a981836c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryText: []
   buttons: {fileID: 0}
-  player: {fileID: 1401426598035937272}
+  inShoppingArea: 0
+  player: {fileID: 6524318483553206197}
 --- !u!95 &1843936552144729720
 Animator:
   serializedVersion: 5
@@ -153,6 +140,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6524318483553206197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768927359180782705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe433ec9fb676164498cb95fd64597df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sleepDisplay: {fileID: 0}
+  maxHealth: 120
+  delta: 0.1
 --- !u!1 &4768927359249285523
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +434,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 68701aa4d6abda2439da7853d0dc1eae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

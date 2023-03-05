@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Shop : MonoBehaviour, IFriendlyDamagable
 {
@@ -10,7 +11,8 @@ public class Shop : MonoBehaviour, IFriendlyDamagable
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
+        currentHealth -= damage;
+        if (currentHealth <= 0) SceneManager.LoadScene(3);
     }
 
     void Start()
