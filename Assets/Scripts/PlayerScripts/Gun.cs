@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
+    public static Gun instance;
+
     [Header("Prefab setting")]
     [SerializeField] Transform firePoint;
     [SerializeField] Bullet bulletPrefab;
@@ -16,12 +18,19 @@ public class Gun : MonoBehaviour
     [SerializeField] int clipSize;
     [SerializeField] float reloadTime = 0.5f;
     int currentBullets;
+    bool reloading = false;
     float timeToShoot = 0f;
     [SerializeField] Text bulletsLeft;
+    [SerializeField] Animator animator;
 
     [Header("Bullet damage")]
     [SerializeField] float baseBulletDamage = 10f;
     public float dmgMultiplier = 0f;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -34,7 +43,7 @@ public class Gun : MonoBehaviour
 
         if (Input.GetMouseButton(0) && timeToShoot <= 0 && currentBullets > 0) Shoot();
 
-        if (currentBullets <= 0) Reload();
+        if (currentBullets <= 0 && !reloading) Reload();
 
         bulletsLeft.text = $"Bullets: {currentBullets}";
     }
@@ -52,7 +61,10 @@ public class Gun : MonoBehaviour
 
     async void Reload()
     {
+        reloading = true;
+        animator.Play("GunReload");
         await Task.Delay((int)(reloadTime * 1000));
         currentBullets = clipSize;
+        reloading = false;
     }
 }

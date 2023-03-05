@@ -13,7 +13,7 @@ public class MeleeEnemy : Enemy
     [SerializeField] float timeBetweenAttacks = 0f;
     [SerializeField] float attackTime = .35f;
 
-    [SerializeField] Animator weaponAnimator;
+    [SerializeField] Animator weaponAnimator, clawAnimator;
     [SerializeField] Transform weaponHilt;
 
     [SerializeField] Transform pivotsPivot, pivot, particlePivot;
@@ -92,10 +92,12 @@ public class MeleeEnemy : Enemy
     {
         attacking = true;
         weaponAnimator.SetTrigger("Attack");
+        clawAnimator.SetTrigger("Attack");
         timeBetweenAttacks = stats.attackSpeed;
         await Task.Delay((int)(attackTime * 750));
         swordCollider.enabled = true;
         weaponAnimator.ResetTrigger("Attack");
+        clawAnimator.ResetTrigger("Attack");
         await Task.Delay((int)(attackTime * 250));
         timeBetweenAttacks = stats.attackSpeed;
         attacking = false;

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4768927359180782669}
   - component: {fileID: 4768927359180782668}
   - component: {fileID: 1401426598035937272}
+  - component: {fileID: 1207627597733977716}
+  - component: {fileID: 1843936552144729720}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -52,6 +54,7 @@ MonoBehaviour:
   velocity: 8
   acceleration: 8
   drag: 5
+  animator: {fileID: 1843936552144729720}
   movementDirection: {x: 0, y: 0}
 --- !u!50 &4768927359180782669
 Rigidbody2D:
@@ -115,6 +118,41 @@ MonoBehaviour:
   sleepDisplay: {fileID: 0}
   maxHealth: 100
   delta: 0.1
+--- !u!114 &1207627597733977716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768927359180782705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e507b0e20e7f8714ca311776a981836c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: {fileID: 0}
+  player: {fileID: 1401426598035937272}
+--- !u!95 &1843936552144729720
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768927359180782705}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dfb2182a7d92d5240b0adc7c5f9ba679, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4768927359249285523
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +164,7 @@ GameObject:
   - component: {fileID: 4768927359249285520}
   - component: {fileID: 4768927359249285521}
   - component: {fileID: 4768927359249285614}
+  - component: {fileID: 5695829347011449476}
   m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
@@ -141,8 +180,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4768927359249285523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.2, z: 1}
+  m_LocalPosition: {x: 0.7, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4768927360268135504}
@@ -189,10 +228,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 086006e040250ea418bc28731ec77880, type: 3}
   m_Color: {r: 0.8301887, g: 0.30074754, b: 0.30074754, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -220,8 +259,30 @@ MonoBehaviour:
   clipSize: 25
   reloadTime: 0.75
   bulletsLeft: {fileID: 0}
+  animator: {fileID: 5695829347011449476}
   baseBulletDamage: 5
   dmgMultiplier: 0
+--- !u!95 &5695829347011449476
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768927359249285523}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ae7ab5c3fa91e343be70837cf172a95, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4768927360268135507
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +433,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68701aa4d6abda2439da7853d0dc1eae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
