@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rb;
     float horizontalInput, verticalInput;
-    Vector2 movementDirection;
+    public Vector2 movementDirection;
 
     void Start()
     {
