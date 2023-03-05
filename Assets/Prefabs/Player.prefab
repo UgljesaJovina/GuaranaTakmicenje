@@ -51,8 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e23c64acb53ef4ba285265ad1fd2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 8
-  acceleration: 8
+  velocity: 10
+  acceleration: 10
   drag: 5
   animator: {fileID: 1843936552144729720}
   movementDirection: {x: 0, y: 0}
@@ -103,7 +103,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1401426598035937272
+--- !u!114 &6524318483553206197
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sleepDisplay: {fileID: 0}
-  maxHealth: 100
+  maxHealth: 300
   delta: 0.1
 --- !u!114 &1207627597733977716
 MonoBehaviour:
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 4768927360268135504}
   bulletPrefab: {fileID: -3628899703558161051, guid: 0a8f9d8984b563a4ebc91cab666bc030, type: 3}
-  bulletsPerSecond: 10
+  bulletsPerSecond: 15
   asMultiplier: 0
   clipSize: 25
   reloadTime: 0.75
@@ -292,7 +292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4768927360268135504}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4768927360551321917}
   - component: {fileID: 4768927360551321914}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
