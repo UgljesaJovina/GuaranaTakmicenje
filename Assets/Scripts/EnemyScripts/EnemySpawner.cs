@@ -31,12 +31,17 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Wave logic")]
     [SerializeField] Wave[] waves;
-    [SerializeField] List<Enemy> spawnedEnemies;
+    [SerializeField] List<Enemy> spawnedEnemies = new List<Enemy>();
     int currentWave = 0;
     [SerializeField] float timeBetweenWaves = 30f, currentTimeBetweenWaves = 30;
     int currTimeBetweenSpawns = 250;
     [SerializeField] float maxTimeBetweenSpawns, minTimeBetweenSpawns;
     bool waveSpawned = false, waveKilled = true;
+
+    private void Awake()
+    {
+        currTimeBetweenSpawns = (int)maxTimeBetweenSpawns;
+    }
 
     void Update()
     {
@@ -47,10 +52,9 @@ public class EnemySpawner : MonoBehaviour
 
     public async void SpawnWave()
     {
-        currTimeBetweenSpawns = (int)Mathf.Clamp(currTimeBetweenSpawns - 20, minTimeBetweenSpawns, maxTimeBetweenSpawns);
-        spawnedEnemies = new List<Enemy>();
         waveSpawned = false;
         waveKilled = false;
+        currTimeBetweenSpawns = (int)Mathf.Clamp(currTimeBetweenSpawns - 10, minTimeBetweenSpawns, maxTimeBetweenSpawns);
 
         while (!waveSpawned)
         {

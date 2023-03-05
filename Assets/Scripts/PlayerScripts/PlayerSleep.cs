@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerSleep : MonoBehaviour, IFriendlyDamagable
 {
@@ -27,5 +28,6 @@ public class PlayerSleep : MonoBehaviour, IFriendlyDamagable
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        if (currentHealth <= 0) SceneManager.LoadScene(3);
     }
 }

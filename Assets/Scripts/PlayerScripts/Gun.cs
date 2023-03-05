@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +31,11 @@ public class Gun : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (Selection.activeGameObject == gameObject) Gizmos.DrawWireSphere(transform.position, 8);
     }
 
     private void Start()
