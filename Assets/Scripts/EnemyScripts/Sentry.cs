@@ -31,6 +31,7 @@ public class Sentry : MonoBehaviour
         {
             StartCoroutine(GameOver());
         }
+        transform.Rotate(Vector3.forward, Time.deltaTime * 100);
     }
     IEnumerator GameOver()
     {
@@ -43,5 +44,10 @@ public class Sentry : MonoBehaviour
       }
       yield return new WaitForSeconds(3f);
       SceneManager.LoadScene("EndScreen");
+    }
+
+    private void FixedUpdate()
+    {
+        transform.Translate(transform.right * 20f * Time.deltaTime);
     }
 }
