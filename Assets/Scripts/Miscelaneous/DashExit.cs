@@ -12,7 +12,7 @@ public class DashExit : MonoBehaviour
     private void OnTriggerEnter2D()
     {
         if(isBoss)
-            PlayerScore.score = 2000 + enemiesHit;
+            PlayerScore.score += 2000;
         StartCoroutine(KillBoss());
     }
 
